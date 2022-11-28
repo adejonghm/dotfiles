@@ -1,0 +1,87 @@
+#****************************#
+#*  .::PERSONAL ALIASES::.  *#
+#****************************#
+
+
+
+#**********#
+#  GLOBAL  #
+#**********#
+# Use the -g flag to elevate alias permissions globally (sudo).
+alias -g c='clear'
+alias -g cp='cp -gR'
+alias -g lx='exa --icons'
+alias -g lxa='lx -aghF'
+alias -g lxd='lx -hD'
+alias -g lxt='lx -glhF --git'
+alias -g mv='mv -g'
+alias -g vim='nvim'
+
+#****************#
+#  SYSTEM (DNF)  #
+#****************#
+#alias bbash='vim ~/.bashrc'
+#alias brestart='source ~/.bashrc'
+alias k='kubectl'
+alias hdd-info='sudo hdparm -I'
+alias kernel-version='uname -romi'
+alias hist='history | grep'
+alias lan='ifconfig -a enp3s0'
+alias linux-version='cat /etc/os-release'
+alias lspyenv='exa --icons ~/.local/share/virtualenvs/'
+alias process='ps aux | grep'
+alias py='python'
+alias show-aliases='vim ~/.aliases'
+alias tar-pack='tar -czvf'	    # [..archivo a crear..] [..origen de la carpeta..]
+alias tar-unpack='tar -xzvf'	# [..archivo a descomprimir *.tar.gz..]
+alias tar-view='tar -ztvf'	    # [..archivo a listar *.tar.gz]
+alias temp-info='watch -n 2 sensors'
+alias tf='terraform'
+alias udemy-megapy-env='cd ~/workspaces/virtualEnvs/Ud-Python/ && pipenv shell'
+alias udemy-megapy-git='cd ~/Git/GH.python-mega-course/'
+alias upg='sudo dnf upgrade'
+alias wan='ifconfig -a wlp4s0'
+alias zaliases='vim ~/.zsh_aliases'
+alias zconfig='vim ~/.zshrc'
+alias zrestar='source ~/.zshrc'
+
+#****************#
+#  SYSTEM (APT)  #
+#****************#
+#alias d-install='sudo dpkg -i'
+#alias d-remove='sudo dpkg -P'
+#alias linux-version='lsb_release -a'
+#alias list-upg='sudo apt list --upgradable'
+#alias start-late='systemd-analyze'
+#alias start-late-process='systemd-analyze blame'
+#alias upd='sudo apt update'
+#alias upg='sudo apt upgrade'
+# *alias buscar-ip='for i in `seq 20 30`; do ping -c2 10.58.1.$i | egrep '(ttl|bytes)'; done'
+# *alias setproxy='set {http,https,ftp}_proxy="http://localhost:8123"'
+# *alias unsetproxy='unset {http,https,ftp}_proxy'
+
+#************#
+#  SERVICES  #
+#************#
+#alias apachestart='sudo /etc/init.d/apache2 start'
+#alias apachestop='sudo /etc/init.d/apache2 stop'
+#alias apacherestart='sudo /etc/init.d/apache2 restart'
+
+#alias bluetoothstart='sudo /etc/init.d/bluetooth start'
+#alias bluetoothstop='sudo /etc/init.d/bluetooth stop'
+#alias bluetoothrestart='sudo /etc/init.d/bluetooth restart'
+
+#alias sambastart='sudo i/etc/init.d/smbd start; sudo /etc/init.d/nmbd start'
+#alias sambastop='sudo /etc/init.d/smbd stop; sudo /etc/init.d/nmbd stop'
+#alias sambarestart='sudo /etc/init.d/smbd restart; sudo /etc/init.d/nmbd restart'
+
+#alias sshstart='sudo /etc/init.d/ssh start'
+#alias sshstop='sudo /etc/init.d/ssh stop'
+#alias sshrestart='sudo /etc/init.d/ssh restart'
+#alias sshview='sudo /etc/init.d/ssh status'
+
+#alias ufwstart='sudo ufw enable'
+#alias ufwstop='sudo ufw disable'
+#alias ufwrestart='sudo ufw disable; sudo ufw enable'
+#alias ufwview='sudo ufw status numbered'
+
