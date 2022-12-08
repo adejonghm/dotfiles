@@ -1,0 +1,88 @@
+"To reload or rerun the vim config from the file itself, use :so %
+"Example of init.vim -> https://github.com/Raisess/.vimrc-or-init.vim/blob/master/init.vim
+"To install Plugins: https://www.github.com/junegunn/vim-plug (Use PlugInstall to install the plugins)
+"List of plugins:
+"   1-nvim-telescope(fuzzy-finder)
+"   2-gruvbox-community
+"   3-lsp
+"   4-neofim
+"   5-tree-sitter
+"   6-undue-tree
+"   7-t-pope
+
+".::Plugins::.
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-telescope/telescope.vim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+Plug 'gruvbox-community/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+call plug#end()
+
+".::Define the Color Scheme::.
+colorscheme gruvbox
+highlight Normal guibg=none
+
+".::Air-line::.
+let g:airline_powerline_fonts = 1
+let g:airline_right_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep= ''
+let g:airline_left_sep = ''
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+".::Airline Symbols::.
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+".::Unicode Symbols::.
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+".::Formatting VIM::.
+set nu                  "put the line number
+set hidden
+set nowrap              "avoid line breaks at the end of the line
+set incsearch           "select in real time what i'm searching
+set nohlsearch          "do not highlight the search
+set guicursor=          "search about this set (guicursor)
+set scrolloff=8
+set cmdheight=2
+set termguicolors
+set signcolumn=yes
+set relativenumber      "puts the line number relative (up and down) to the line where you are
+
+".::Swap file::.
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+
+".::Formatting text::.
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+
