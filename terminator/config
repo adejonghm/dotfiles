@@ -1,0 +1,48 @@
+[global_config]
+  title_hide_sizetext = True
+  inactive_color_offset = 0.809748427672956
+  suppress_multiple_term_dialog = True
+  title_use_system_font = False
+  title_font = MesloLGS NF 11
+  putty_paste_style = True
+  putty_paste_style_source_clipboard = True
+  smart_copy = False
+  clear_select_on_copy = True
+[keybindings]
+  zoom_in = <Ctrl>plus
+  zoom_out = <Ctrl>minus
+  zoom_normal = <Ctrl>0
+  group_all = ""
+  group_all_toggle = <Super>g
+  broadcast_off = <Primary><Super>o
+  broadcast_group = <Primary><Super>g
+  broadcast_all = <Primary><Super>a
+[profiles]
+  [[default]]
+    background_color = "#1d1f21"
+    background_darkness = 0.95
+    background_type = transparent
+    cursor_shape = ibeam
+    cursor_color = "#aaaaaa"
+    font = MesloLGS NF 9
+    foreground_color = "#c5c8c6"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scroll_on_output = True
+    scrollback_infinite = True
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    use_system_font = False
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      #last_active_window = True
+      size = 1200, 550
+      parent = ""
+      position = 350:170
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]
