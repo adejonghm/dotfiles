@@ -14,12 +14,12 @@ alias -g vim='nvim'
 #****************#
 #  SYSTEM (DNF)  #
 #****************#
-alias conf-aliases='vim ~/.aliases'
+alias c-aliases='vim ~/.aliases'
 alias gz-pack='tar -czvf'	                # [..archivo a crear..] [..origen de la carpeta..]
 alias gz-view='tar -ztvf'	                # [..archivo a listar *.tar.gz]
 alias hdd-info='sudo hdparm -I'
 alias hist='history | grep'
-alias k='kubectl'
+alias j='jump'
 alias kernel-version='uname -romi'
 alias lan='ifconfig -a enp3s0'
 alias linux-version='cat /etc/os-release'
@@ -30,7 +30,7 @@ alias show-aliases='vim ~/.aliases'
 alias temp-info='watch -n 2 sensors'
 alias tf='terraform'
 alias udemy-megapy-env='cd ~/workspaces/virtualEnvs/Ud-Python/ && pipenv shell'
-alias udemy-megapy-git='cd ~/Git/GH.python-mega-course/'
+#alias udemy-megapy-git='cd ~/Git/GH.python-mega-course/'
 alias upg='sudo dnf upgrade'
 alias wan='ifconfig -a wlp4s0'
 alias zconfig='vim ~/.zshrc'
