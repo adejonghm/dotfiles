@@ -56,8 +56,8 @@ COMPLETION_WAITING_DOTS="true"
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_COLORIZE_STYLE="colorful"
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(brackets cursor line main pattern root url)
 ZSH_HIGHLIGHT_URL_HIGHLIGHTER_TIMEOUT=1
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(brackets cursor line main pattern root) #url)
 
 #ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta'  
 #ZSH_HIGHLIGHT_STYLES[path]='fg=cyan,underline'
@@ -75,20 +75,8 @@ zstyle ':autocomplete:tab:*' completion cycle
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
-	bgnotify
-	colored-man-pages
-	colorize
-	common-aliases
-#	copypath
-#	copyfile
-#	dircycle
-	extract
-	git
-	gitignore
-	history
-	sudo
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+    bgnotify colored-man-pages colorize common-aliases dircycle docker extract fzf 
+    git gitignore jump kubectl sudo zsh-autosuggestions zsh-syntax-highlighting
 )
 
 
