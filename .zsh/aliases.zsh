@@ -14,7 +14,6 @@ alias -g vim='nvim'
 #****************#
 #  SYSTEM (DNF)  #
 #****************#
-alias c-aliases='vim ~/.aliases'
 alias gz-pack='tar -czvf'	                # [..archivo a crear..] [..origen de la carpeta..]
 alias gz-view='tar -ztvf'	                # [..archivo a listar *.tar.gz]
 alias hdd-info='sudo hdparm -I'
@@ -33,6 +32,7 @@ alias udemy-megapy-env='cd ~/workspaces/virtualEnvs/Ud-Python/ && pipenv shell'
 #alias udemy-megapy-git='cd ~/Git/GH.python-mega-course/'
 alias upg='sudo dnf upgrade'
 alias wan='ifconfig -a wlp4s0'
+alias zaliases='vim ~/.zsh/.aliases.zsh'
 alias zconfig='vim ~/.zshrc'
 alias zrestar='source ~/.zshrc'
 

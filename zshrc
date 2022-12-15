@@ -7,13 +7,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Set name of the theme to load
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 # ====================
 # ===   Exports    ===
 # ====================
-
 export MANPATH="/usr/local/man:$MANPATH"
 
 # Path to your oh-my-zsh installation
@@ -39,7 +38,6 @@ fi
 # =============================
 # ===   General settings    ===
 # =============================
-
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
@@ -53,7 +51,6 @@ COMPLETION_WAITING_DOTS="true"
 # ============================================
 # ===   Completion and Highlight styles    ===
 # ============================================
-
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_COLORIZE_STYLE="colorful"
 ZSH_HIGHLIGHT_URL_HIGHLIGHTER_TIMEOUT=1
@@ -75,8 +72,7 @@ zstyle ':autocomplete:tab:*' completion cycle
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
-    bgnotify colored-man-pages colorize common-aliases dircycle docker extract fzf 
-    git gitignore jump kubectl sudo zsh-autosuggestions zsh-syntax-highlighting
+    bgnotify colored-man-pages colorize common-aliases dircycle docker extract fzf git gitignore jump kubectl sudo zsh-autosuggestions zsh-syntax-highlighting
 )
 
 
@@ -84,37 +80,49 @@ plugins=(
 # ===   Execute initializaion        ===
 # ===   Needs to be after 'plugins'  ===
 # ======================================
-
 source $ZSH/oh-my-zsh.sh
 
 
 # ====================
 # ===   OCI-CLI    ===
 # ====================
-
 [[ -e "~/.local/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "~/.local/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh"
 
 
 # =============================
 # ===   Personal Aliases    ===
 # =============================
-
-source ~/.aliases
+[[ -f ~/.zsh/aliases.zsh ]] && source ~/.zsh/aliases.zsh
 
 
 # =========================
 # ===   Fuzzy Finder    ===
 # =========================
+if [[ ! "$PATH" == */home/$USER/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}$HOME/.fzf/bin"
+fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "$HOME/.fzf/shell/key-bindings.zsh"
 
 
-# =================
-# ===   Other   ===
-# =================
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+# ================================
+# ===   Other Configurations   ===
+# ================================
 # Enable kubectl auto-completion
+# ------------------------------
 source <(kubectl completion zsh)
+
+# Customizing prompt. run `p10k configure` or edit ~/.zsh/p10k.zsh
+# -----------------------------------------------------------------
+[[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
+
+# Customizing prompt with Starship
+# --------------------------------
+[[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
+eval "$(starship init zsh)"
