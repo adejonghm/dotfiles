@@ -2,6 +2,10 @@
 # ===   THIS IS MY ZSHELL CONFIG FILE    ===
 # ==========================================
 
+
+# ==========================
+# ===   LOAD ZSH THEME   ===
+# ==========================
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -98,16 +102,15 @@ source $ZSH/oh-my-zsh.sh
 # =========================
 # ===   Fuzzy Finder    ===
 # =========================
+# Setup
 if [[ ! "$PATH" == */home/$USER/.fzf/bin* ]]; then
   PATH="${PATH:+${PATH}:}$HOME/.fzf/bin"
 fi
 
 # Auto-completion
-# ---------------
 [[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
-# ------------
 source "$HOME/.fzf/shell/key-bindings.zsh"
 
 
@@ -115,14 +118,11 @@ source "$HOME/.fzf/shell/key-bindings.zsh"
 # ===   Other Configurations   ===
 # ================================
 # Enable kubectl auto-completion
-# ------------------------------
 source <(kubectl completion zsh)
 
 # Customizing prompt. run `p10k configure` or edit ~/.zsh/p10k.zsh
-# -----------------------------------------------------------------
-[[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
+#[[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
 
 # Customizing prompt with Starship
-# --------------------------------
 [[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
 eval "$(starship init zsh)"
