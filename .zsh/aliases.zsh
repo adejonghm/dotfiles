@@ -14,6 +14,8 @@ alias -g vim='nvim'
 #****************#
 #  SYSTEM (DNF)  #
 #****************#
+alias conf-aliases='vim ~/.zsh/aliases.zsh'
+alias env-megapy='cd ~/workspaces/virtualEnvs/Ud-Python/ && pipenv shell'
 alias gz-pack='tar -czvf'	                # [..archivo a crear..] [..origen de la carpeta..]
 alias gz-view='tar -ztvf'	                # [..archivo a listar *.tar.gz]
 alias hdd-info='sudo hdparm -I'
@@ -24,13 +26,7 @@ alias lan='ifconfig -a enp3s0'
 alias linux-version='cat /etc/os-release'
 alias lspyenv='exa --icons ~/.local/share/virtualenvs/'
 alias process='ps aux | grep'
-alias py='python'
-alias show-aliases='vim ~/.aliases'
 alias temp-info='watch -n 2 sensors'
-alias tf='terraform'
-alias udemy-megapy-env='cd ~/workspaces/virtualEnvs/Ud-Python/ && pipenv shell'
-#alias udemy-megapy-git='cd ~/Git/GH.python-mega-course/'
-alias upg='sudo dnf upgrade'
 alias wan='ifconfig -a wlp4s0'
 alias zaliases='vim ~/.zsh/.aliases.zsh'
 alias zconfig='vim ~/.zshrc'
@@ -39,8 +35,6 @@ alias zrestar='source ~/.zshrc'
 #****************#
 #  SYSTEM (APT)  #
 #****************#
-#alias bbash='vim ~/.bashrc'
-#alias brestart='source ~/.bashrc'
 #alias d-install='sudo dpkg -i'
 #alias d-remove='sudo dpkg -P'
 #alias linux-version='lsb_release -a'
