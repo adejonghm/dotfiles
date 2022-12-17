@@ -76,7 +76,7 @@ zstyle ':autocomplete:tab:*' completion cycle
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
-    bgnotify colored-man-pages colorize dircycle dnf docker extract fzf git gitignore jump kubectl sudo zsh-autosuggestions zsh-syntax-highlighting
+    bgnotify colored-man-pages colorize dircycle dnf docker extract fzf git gitignore jump kubectl python ripgrep sudo systemd terraform zsh-autosuggestions zsh-syntax-highlighting
 )
 
 

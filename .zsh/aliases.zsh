@@ -47,28 +47,3 @@ alias zrestar='source ~/.zshrc'
 # *alias setproxy='set {http,https,ftp}_proxy="http://localhost:8123"'
 # *alias unsetproxy='unset {http,https,ftp}_proxy'
 
-#************#
-#  SERVICES  #
-#************#
-#alias apachestart='sudo /etc/init.d/apache2 start'
-#alias apachestop='sudo /etc/init.d/apache2 stop'
-#alias apacherestart='sudo /etc/init.d/apache2 restart'
-
-#alias bluetoothstart='sudo /etc/init.d/bluetooth start'
-#alias bluetoothstop='sudo /etc/init.d/bluetooth stop'
-#alias bluetoothrestart='sudo /etc/init.d/bluetooth restart'
-
-#alias sambastart='sudo i/etc/init.d/smbd start; sudo /etc/init.d/nmbd start'
-#alias sambastop='sudo /etc/init.d/smbd stop; sudo /etc/init.d/nmbd stop'
-#alias sambarestart='sudo /etc/init.d/smbd restart; sudo /etc/init.d/nmbd restart'
-
-#alias sshstart='sudo /etc/init.d/ssh start'
-#alias sshstop='sudo /etc/init.d/ssh stop'
-#alias sshrestart='sudo /etc/init.d/ssh restart'
-#alias sshview='sudo /etc/init.d/ssh status'
-
-#alias ufwstart='sudo ufw enable'
-#alias ufwstop='sudo ufw disable'
-#alias ufwrestart='sudo ufw disable; sudo ufw enable'
-#alias ufwview='sudo ufw status numbered'
-
