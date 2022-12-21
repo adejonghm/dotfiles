@@ -15,6 +15,7 @@ alias -g vim='nvim'
 #  SYSTEM (DNF)  #
 #****************#
 alias conf-aliases='vim ~/.zsh/aliases.zsh'
+alias conf-starship='vim ~/.config/starship.toml'
 alias env-megapy='cd ~/workspaces/virtualEnvs/Ud-Python/ && pipenv shell'
 alias gz-pack='tar -czvf'	                # [..archivo a crear..] [..origen de la carpeta..]
 alias gz-view='tar -ztvf'	                # [..archivo a listar *.tar.gz]
