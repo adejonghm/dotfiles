@@ -878,13 +878,13 @@
   typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=180
 
   # Context format when running with privileges: bold user@hostname(%n@%m).
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%B%m'
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE=' %B%m'
   
   # Context format when in SSH without privileges: user@hostname(%n@%m).
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE='%m'
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE=' %m'
   
   # Default context format (no privileges, no SSH): user@hostname(%n@%m).
-  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%m'
+  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE=' %m'
 
   # Don't show context unless running with privileges or in SSH.
   # Tip: Remove the next line to always show context.
