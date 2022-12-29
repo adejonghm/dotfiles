@@ -3,12 +3,12 @@
 #**********#
 # Use the -g flag to elevate alias permissions globally (sudo).
 alias -g c='clear'
-alias -g cp='cp -gR'
+alias -g cp='advcp -gR'
 alias -g lx='exa --icons --group-directories-first'
 alias -g lxa='lx -agF'
 alias -g lxd='lx -hD'
 alias -g lxl='lx -glF --git'
-alias -g mv='mv -g'
+alias -g mv='advmv -g'
 alias -g vim='nvim'
 
 #****************#
