@@ -137,16 +137,16 @@ rm -fr dotfiles/
 
 # CREATE MARKS FOR ZSH JUMP PLUGIN #
 mkdir ~/.marks
-declare -a marks=( 
-	"dotfiles"
-	"mega-python"
-	"my-readme"
+declare -a marks=(
+  "dotfiles"
+  "mega-python"
+  "my-readme"
 )
 
 declare -a dest=(
   "$HOME/Git/GH.dotfiles"
-	"$HOME/Git/GH.python-mega-course"
-	"$HOME/Git/GH.readme-file"
+  "$HOME/Git/GH.python-mega-course"
+  "$HOME/Git/GH.readme-file"
 )
 
 for i in "${!marks[@]}"; do  
