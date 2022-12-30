@@ -135,6 +135,24 @@ cp dotfiles/.config/nvim/ ~/.config/nvim/
 
 rm -fr dotfiles/
 
+# CREATE MARKS FOR ZSH JUMP PLUGIN #
+mkdir ~/.marks
+declare -a marks=( 
+	"dotfiles"
+	"mega-python"
+	"my-readme"
+)
+
+declare -a dest=(
+  "$HOME/Git/GH.dotfiles"
+	"$HOME/Git/GH.python-mega-course"
+	"$HOME/Git/GH.readme-file"
+)
+
+for i in "${!marks[@]}"; do  
+  ln -s "${dest[$i]}" ~/.marks/"${marks[$i]}"
+done
+
 # INSTALL COREUTILS #
 # Find the latest version of CoreUtils in https://ftp.gnu.org/gnu/coreutils/ and the latest version of advcpmv in https://github.com/jarun/advcpmv
 ADVCPMV_VERSION=${1:-0.9}
