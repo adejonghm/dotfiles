@@ -27,36 +27,11 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 sudo dnf install fedora-workstation-repositories
 
 
-#==================================
-#==  SELECT DESKTOP ENVIRONMENT  ==
-#==================================
-
-if [[ $XDG_CURRENT_DESKTOP = "XFCE" ]]; then
-
-  # REMOVE UNNECESSARY APPS #	
-  sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha mousepad ristretto sushi thunar transmission xfburn xterm xfce4-terminal 
-
-  # ALBERT LAUNCHER #
-  sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
-  
-  sudo dnf install gedit evince nautilus plank xfce4-notes-plugin albert
-
-elif [[ $XDG_CURRENT_DESKTOP = "GNOME" ]]; then
-
-  # REMOVE UNNECESSARY APPS #	
-  sudo dnf remove -y eog gnome-maps gnome-terminal gnome-tour libreoffice\* rhythmbox totem
-  
-  # RPM FUSION PACKAGES IN THE SOFTWARE CENTER #
-  sudo dnf groupupdate core
-    
-  sudo dnf install gparted
-
-fi
-
-
 #====================================
 #==  ADDING EXTERNAL REPOSITORIES  ==
 #====================================
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 sudo dnf config-manager --set-enabled google-chrome
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
@@ -80,6 +55,28 @@ enabled=1
 gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
+
+
+#==================================
+#==  SELECT DESKTOP ENVIRONMENT  ==
+#==================================
+if [[ $XDG_CURRENT_DESKTOP = "XFCE" ]]; then
+
+  # ALBERT LAUNCHER #
+  sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
+
+  sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha mousepad ristretto sushi thunar transmission xfburn xterm xfce4-terminal 
+  sudo dnf install -y gedit evince nautilus plank xfce4-notes-plugin albert
+
+elif [[ $XDG_CURRENT_DESKTOP = "GNOME" ]]; then
+  
+  # RPM FUSION PACKAGES IN THE SOFTWARE CENTER #
+  sudo dnf groupupdate core
+    
+  sudo dnf remove -y eog gnome-maps gnome-terminal gnome-tour libreoffice\* rhythmbox totem
+  sudo dnf install -y gparted gnome-tweaks && flatpak install -y flathub org.gnome.Extensions
+
+fi
 
 
 #==================================
@@ -107,8 +104,7 @@ sudo systemctl start docker.service
 sudo usermod -aG docker $USER
 
 # FLATHUB #
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install org.libreoffice.LibreOffice md.obsidian.Obsidian com.spotify.Client org.telegram.desktop
+flatpak install -y flathub org.libreoffice.LibreOffice md.obsidian.Obsidian com.spotify.Client org.telegram.desktop
 
 # PYTHON PIP #
 pip install --user grip pipenv azure-cli
