@@ -56,6 +56,8 @@ gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 
+sudo dnf upgrade -y --refresh 
+
 
 #==================================
 #==  SELECT DESKTOP ENVIRONMENT  ==
@@ -88,7 +90,7 @@ fi
 # - patchutils ->
 # - grip -> Local renderer for Markdown files
 
-sudo dnf upgrade -y --refresh && sudo dnf install -y bat dnf-plugins-core exa fd-find fzf git mc neofetch npm patchutils pdfgrep python3-pip ripgrep sqlite xkill zsh \
+sudo dnf install -y bat dnf-plugins-core exa fd-find fzf git mc neofetch npm patchutils pdfgrep python3-pip ripgrep sqlite xkill zsh \
 gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel \
 brave-browser code containerd.io docker-ce docker-ce-cli docker-compose-plugin google-chrome-stable preload terraform \
 latexmk texlive texlive-{babel-english\*,babel-portuges\*,babel-spanish\*,base,bibtex,hyphenat,hyphenat-doc,picture} \
