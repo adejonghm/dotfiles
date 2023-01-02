@@ -38,7 +38,7 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc  ## VSCode
 sudo dnf copr enable elxreno/preload -y
 
 # MULTIMEDIA PLUGINS #
-sudo dnf groupupdate sound-and-video multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf groupupdate -y sound-and-video multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 
 # VISUAL STUDIO CODE #
 cat <<EOF | sudo tee /etc/yum.repos.d/vscode.repo
