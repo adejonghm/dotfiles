@@ -12,7 +12,7 @@
 #============================
 #==  SYSTEM CONFIGURATION  ==
 #============================
-sudo sed -i '$ a \\n#- ADDED FROM FEDORA.SH SCRIPT -#\ndefaultyes=True\ndeltarpm=True\nfastestmirror=True\nkeepcache=True\nmax_parallel_downloads=10' /etc/dnf/dnf.conf
+sudo sed -i '$ a \\n#- Added from fedora.sh install script -#\ndefaultyes=True\ndeltarpm=True\nfastestmirror=True\nkeepcache=True\nmax_parallel_downloads=10' /etc/dnf/dnf.conf
 
 # ENABLE RPM FUSION REPOSITORIES #
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
