@@ -73,6 +73,7 @@ gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-l
 #==  SELECT DESKTOP ENVIRONMENT  ==
 #==================================
 if [[ $XDG_CURRENT_DESKTOP = "XFCE" ]]; then
+  sed -i "$ a Hidden=true" ~/.config/autostart/org.mageia.dnfdragora-updater.desktop
 
   # ALBERT LAUNCHER #
   sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
@@ -81,7 +82,6 @@ if [[ $XDG_CURRENT_DESKTOP = "XFCE" ]]; then
   sudo dnf install -y gedit evince nautilus plank xfce4-notes-plugin albert
 
 elif [[ $XDG_CURRENT_DESKTOP = "GNOME" ]]; then
-  
   # RPM FUSION PACKAGES IN THE SOFTWARE CENTER #
   sudo dnf groupupdate core
     
@@ -119,8 +119,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 # MY CONFIGURATION FILES #
-sed -i "$ a Hidden=true" ~/.config/autostart/org.mageia.dnfdragora-updater.desktop
-
 git clone https://github.com/adejonghm/dotfiles.git
 
 cp dotfiles/.config/starship.toml ~/.config/
