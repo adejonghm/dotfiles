@@ -12,6 +12,8 @@
 #============================
 #==  SYSTEM CONFIGURATION  ==
 #============================
+sudo sed -i "$ a Defaults timestamp_timeout = -1" /etc/sudoers
+
 sudo sed -i '$ a \\n#- Added from fedora.sh install script -#\ndefaultyes=True\ndeltarpm=True\nfastestmirror=True\nkeepcache=True\nmax_parallel_downloads=10' /etc/dnf/dnf.conf
 
 # ENABLE RPM FUSION REPOSITORIES #
@@ -50,7 +52,21 @@ gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 
-sudo dnf upgrade -y --refresh 
+
+#==================================
+#==  INSTALLING PACKAGES & APPS  ==
+#==================================
+# DESCRIPTION:
+# - fd-find -> Neovim Plugin (Lua configuration)
+# - ripgrep -> Neovim Plugin for LSP & Mason (Lua configuration)
+# - patchutils ->
+# - grip -> Local renderer for Markdown files
+
+sudo dnf install -y bat dnf-plugins-core exa fd-find fzf git mc neofetch npm patchutils pdfgrep python3-pip ripgrep sqlite xkill zsh \
+discord htop megasync mpv nomacs neovim pinta qbittorrent rpi-imager redshift terminator vlc xournalpp zeal \
+latexmk texlive texlive-{babel-english\*,babel-portuges\*,babel-spanish\*,base,bibtex,hyphenat,hyphenat-doc,picture} \
+brave-browser code containerd.io docker-ce docker-ce-cli docker-compose-plugin google-chrome-stable preload terraform \
+gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 
 
 #==================================
@@ -74,22 +90,7 @@ elif [[ $XDG_CURRENT_DESKTOP = "GNOME" ]]; then
 
 fi
 
-
-#==================================
-#==  INSTALLING PACKAGES & APPS  ==
-#==================================
-# DESCRIPTION:
-# - fd-find -> Neovim Plugin (Lua configuration)
-# - ripgrep -> Neovim Plugin for LSP & Mason (Lua configuration)
-# - patchutils ->
-# - grip -> Local renderer for Markdown files
-
-sudo dnf install -y bat dnf-plugins-core exa fd-find fzf git mc neofetch npm patchutils pdfgrep python3-pip ripgrep sqlite xkill zsh \
-gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel \
-brave-browser code containerd.io docker-ce docker-ce-cli docker-compose-plugin google-chrome-stable preload terraform \
-latexmk texlive texlive-{babel-english\*,babel-portuges\*,babel-spanish\*,base,bibtex,hyphenat,hyphenat-doc,picture} \
-discord htop megasync mpv nomacs neovim pinta qbittorrent rpi-imager redshift terminator vlc xournalpp zeal
-
+sudo dnf upgrade -y --refresh
 
 #============================
 #==  OTHER CONFIGURATIONS  ==
@@ -110,7 +111,7 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 # ZSH CONFIGURATIONS #
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
@@ -118,12 +119,16 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 # MY CONFIGURATION FILES #
+sed -i "$ a Hidden=true" ~/.config/autostart/org.mageia.dnfdragora-updater.desktop
+
 git clone https://github.com/adejonghm/dotfiles.git
-cp dotfiles/zshrc ~/.zshrc
-cp dotfiles/.zsh/ ~/
+
 cp dotfiles/.config/starship.toml ~/.config/
-cp dotfiles/.config/terminator/config ~/.config/terminator/
-cp dotfiles/.config/nvim/ ~/.config/nvim/
+cp dotfiles/zshrc ~/.zshrc
+cp -r dotfiles/.config/nvim/ ~/.config/nvim/
+cp -r dotfiles/.config/terminator/ ~/.config/terminator/
+cp -r dotfiles/.fonts/ ~/
+cp -r dotfiles/.zsh/ ~/
 
 rm -fr dotfiles/
 
@@ -166,5 +171,9 @@ rm -f coreutils-$CORE_UTILS_VERSION.tar.xz
 rm -fr coreutils-$CORE_UTILS_VERSION
 
 # CHANGE HOSTNAME #
-sudo hostnamectl set-hostname "konoha" && reboot
+sudo hostnamectl set-hostname "konoha"
 
+# Restore default config #
+sudo sed -i "/Defaults timestamp_timeout/d" /etc/sudoers
+
+echo " >> Done, You Can Now Restart Your Computer! << "
