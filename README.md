@@ -17,6 +17,17 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/adejonghm/dotfiles/main/fe
 
 #### NeoVim configuration
 
+Neovim is mandatory
+
+##### Dependencies
+
+- Install npm
+- Install ripgrep
+- Clone fzf repository
+- Use any Nerd Font (Fira Code NF Regular)
+
+_Optional: install starship_
+
 [Back To The Top](#read-me-template)
 
 ---
