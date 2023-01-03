@@ -21,20 +21,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ===   Exports    ===
 # ====================
 export MANPATH="/usr/local/man:$MANPATH"
-
-# Path to your oh-my-zsh installation
 export ZSH="$HOME/.oh-my-zsh"
-
-# If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:$PATH
-
-# You may need to manually set your language environment
 export LANG=en_US.UTF-8
-
-# Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=30
 
-# Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nvim'
 else
@@ -45,13 +36,8 @@ fi
 # =============================
 # ===   General settings    ===
 # =============================
-# Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
 
@@ -76,8 +62,6 @@ zstyle ':autocomplete:tab:*' completion cycle
 # ====================
 # ===   Plugins    ===
 # ====================
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
     bgnotify colored-man-pages colorize dircycle dnf docker extract fzf git gitignore jump kubectl python ripgrep sudo systemd terraform zsh-autosuggestions zsh-syntax-highlighting
 )
@@ -105,15 +89,12 @@ source $ZSH/oh-my-zsh.sh
 # =========================
 # ===   Fuzzy Finder    ===
 # =========================
-# Setup
 if [[ ! "$PATH" == */home/$USER/.fzf/bin* ]]; then
   PATH="${PATH:+${PATH}:}$HOME/.fzf/bin"
 fi
 
-# Auto-completion
 [[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
 
-# Key bindings
 source "$HOME/.fzf/shell/key-bindings.zsh"
 
 
