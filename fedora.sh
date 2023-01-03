@@ -73,7 +73,7 @@ gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-l
 #==  SELECT DESKTOP ENVIRONMENT  ==
 #==================================
 if [[ $XDG_CURRENT_DESKTOP = "XFCE" ]]; then
-  sed -i "$ a Hidden=true" ~/.config/autostart/org.mageia.dnfdragora-updater.desktop
+  sed -i "$ a Hidden=true" $HOME/.config/autostart/org.mageia.dnfdragora-updater.desktop
 
   # ALBERT LAUNCHER #
   sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
@@ -111,27 +111,27 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 # ZSH CONFIGURATIONS #
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # FUZZY FINDE CONFIGURATION #
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf && $HOME/.fzf/install
 
 # MY CONFIGURATION FILES #
 git clone https://github.com/adejonghm/dotfiles.git
 
-cp dotfiles/.config/starship.toml ~/.config/
-cp dotfiles/zshrc ~/.zshrc
-cp -r dotfiles/.config/nvim/ ~/.config/nvim/
-cp -r dotfiles/.config/terminator/ ~/.config/terminator/
-cp -r dotfiles/.fonts/ ~/
-cp -r dotfiles/.zsh/ ~/
+cp dotfiles/.config/starship.toml $HOME/.config/
+cp dotfiles/zshrc $HOME/.zshrc
+cp -r dotfiles/.config/nvim/ $HOME/.config/nvim/
+cp -r dotfiles/.config/terminator/ $HOME/.config/terminator/
+cp -r dotfiles/.fonts/ $HOME/
+cp -r dotfiles/.zsh/ $HOME/
 
 rm -fr dotfiles/
 
 # CREATE MARKS FOR ZSH JUMP PLUGIN #
-mkdir ~/.marks
+mkdir $HOME/.marks
 declare -a marks=(
   "dotfiles"
   "mega-python"
@@ -145,7 +145,7 @@ declare -a dest=(
 )
 
 for i in "${!marks[@]}"; do  
-  ln -s "${dest[$i]}" ~/.marks/"${marks[$i]}"
+  ln -s "${dest[$i]}" $HOME/.marks/"${marks[$i]}"
 done
 
 # INSTALL COREUTILS #
