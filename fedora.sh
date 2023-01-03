@@ -36,9 +36,6 @@ sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/has
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc  ## BRAVE-BROWSER
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc  ## VSCode
 
-# PRELOAD (SPEED UP FREQUENT APPLICATIONS) #
-sudo dnf copr enable elxreno/preload -y
-
 # MULTIMEDIA PLUGINS #
 sudo dnf groupupdate -y sound-and-video multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 
@@ -78,19 +75,25 @@ if [[ $XDG_CURRENT_DESKTOP = "XFCE" ]]; then
   # ALBERT LAUNCHER #
   sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
 
-  sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha mousepad ristretto sushi thunar transmission xfburn xterm xfce4-terminal 
-  sudo dnf install -y gedit evince nautilus plank xfce4-notes-plugin albert
+  sudo dnf install -y gedit evince nautilus plank sushi xfce4-notes-plugin albert
+  sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha mousepad ristretto thunar transmission xfburn xterm xfce4-terminal 
 
 elif [[ $XDG_CURRENT_DESKTOP = "GNOME" ]]; then
   # RPM FUSION PACKAGES IN THE SOFTWARE CENTER #
-  sudo dnf groupupdate core
+  sudo dnf groupupdate -y core
+
+  # PRELOAD (SPEED UP FREQUENT APPLICATIONS) #
+  sudo dnf copr enable elxreno/preload -y
     
-  sudo dnf remove -y eog gnome-maps gnome-terminal gnome-tour libreoffice\* rhythmbox totem
-  sudo dnf install -y gparted gnome-tweaks && flatpak install -y flathub org.gnome.Extensions
+  sudo dnf install -y gedit gparted gnome-tweaks util-linux-user
+  sudo dnf remove -y eog gnome-maps gnome-terminal gnome-text-editor gnome-tour libreoffice\* rhythmbox totem
+
+  flatpak install -y flathub org.gnome.Extensions
 
 fi
 
 sudo dnf upgrade -y --refresh
+
 
 #============================
 #==  OTHER CONFIGURATIONS  ==
@@ -172,6 +175,7 @@ rm -fr coreutils-$CORE_UTILS_VERSION
 sudo hostnamectl set-hostname "konoha"
 
 # Restore default config #
+rm $HOME/.fzf.zsh
 sudo sed -i "/Defaults timestamp_timeout/d" /etc/sudoers
 
-echo " >> Done, You Can Now Restart Your Computer! << "
+echo " >> Done, You Can Restart Your Computer! << "
