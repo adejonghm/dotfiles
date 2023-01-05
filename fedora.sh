@@ -75,7 +75,7 @@ if [[ $XDG_CURRENT_DESKTOP = "XFCE" ]]; then
   # ALBERT LAUNCHER #
   sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
 
-  sudo dnf install -y gedit evince nautilus plank sushi xfce4-notes-plugin albert
+  sudo dnf install -y cheese evince gedit nautilus plank sushi xfce4-notes-plugin albert
   sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha mousepad ristretto thunar transmission xfburn xterm xfce4-terminal 
 
 elif [[ $XDG_CURRENT_DESKTOP = "GNOME" ]]; then
