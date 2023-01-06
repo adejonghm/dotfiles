@@ -32,6 +32,7 @@ sudo dnf config-manager --set-enabled google-chrome
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+#sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo ### ALBERT LAUNCHER 
 
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc  ## BRAVE-BROWSER
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc  ## VSCode
@@ -56,52 +57,25 @@ gpgkey=https://packages.microsoft.com/keys/microsoft.asc' > /etc/yum.repos.d/vsc
 # - ripgrep -> Neovim Plugin for LSP & Mason (Lua configuration)
 # - patchutils ->
 # - grip -> Local renderer for Markdown files
+sudo dnf upgrade -y --refresh
 
-sudo dnf install -y bat dnf-plugins-core exa fd-find fzf mc neofetch npm patchutils pdfgrep python3-pip ripgrep sqlite xkill zsh \
-discord htop megasync mpv nomacs neovim pinta qbittorrent rpi-imager redshift terminator vlc xournalpp zeal \
+sudo dnf install -y bat dnf-plugins-core exa fd-find fzf git mc neofetch npm patchutils pdfgrep python3-pip ripgrep sqlite xkill zsh \
+cheese discord evince gedit htop megasync mpv nomacs neovim pinta plank qbittorrent rpi-imager redshift terminator sushi ulauncher vlc xfce4-notes-plugin xournalpp zeal \
 latexmk texlive texlive-{babel-english\*,babel-portuges\*,babel-spanish\*,base,bibtex,hyphenat,hyphenat-doc,picture} \
-brave-browser code containerd.io docker-ce docker-ce-cli docker-compose-plugin google-chrome-stable preload terraform \
+brave-browser code containerd.io docker-ce docker-ce-cli docker-compose-plugin google-chrome-stable terraform \
 gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 
-
-#==================================
-#==  SELECT DESKTOP ENVIRONMENT  ==
-#==================================
-if [[ $XDG_CURRENT_DESKTOP = "XFCE" ]]; then
-  
-  DNFDRAGORA=$HOME/.config/autostart/org.mageia.dnfdragora-updater.desktop 
-  if [[ $DNFDRAGORA ]]; then
-    sed -i "$ a Hidden=true" $DNFDRAGORA
-  else
-    echo "Hidden=true" > $DNFDRAGORA    
-  fi
-
-  # ALBERT LAUNCHER #
-  #sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
-
-  sudo dnf install -y cheese evince gedit git plank sushi ulauncher xfce4-notes-plugin #albert nautilus 
-  sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha mousepad ristretto transmission xfburn xterm xfce4-terminal #thunar 
-
-elif [[ $XDG_CURRENT_DESKTOP = "GNOME" ]]; then
-  # RPM FUSION PACKAGES IN THE SOFTWARE CENTER #
-  sudo dnf groupupdate -y core
-
-  # PRELOAD (SPEED UP FREQUENT APPLICATIONS) #
-  sudo dnf copr enable elxreno/preload -y
-    
-  sudo dnf install -y gedit gparted gnome-tweaks util-linux-user
-  sudo dnf remove -y eog gnome-maps gnome-terminal gnome-text-editor gnome-tour libreoffice\* rhythmbox totem
-
-  flatpak install -y flathub org.gnome.Extensions
-
-fi
-
-sudo dnf upgrade -y --refresh
+sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha mousepad ristretto transmission xfburn xterm xfce4-terminal #thunar 
 
 
 #============================
 #==  OTHER CONFIGURATIONS  ==
 #============================
+DNFDRAGORA=$HOME/.config/autostart/org.mageia.dnfdragora-updater.desktop 
+if [[ ! -f $DNFDRAGORA ]]; then
+  echo "Hidden=true" > $DNFDRAGORA    
+fi
+
 # ENABLE DOCKER #
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
