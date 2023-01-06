@@ -57,7 +57,7 @@ gpgkey=https://packages.microsoft.com/keys/microsoft.asc' > /etc/yum.repos.d/vsc
 # - patchutils ->
 # - grip -> Local renderer for Markdown files
 
-sudo dnf install -y bat dnf-plugins-core exa fd-find fzf git mc neofetch npm patchutils pdfgrep python3-pip ripgrep sqlite xkill zsh \
+sudo dnf install -y bat dnf-plugins-core exa fd-find fzf mc neofetch npm patchutils pdfgrep python3-pip ripgrep sqlite xkill zsh \
 discord htop megasync mpv nomacs neovim pinta qbittorrent rpi-imager redshift terminator vlc xournalpp zeal \
 latexmk texlive texlive-{babel-english\*,babel-portuges\*,babel-spanish\*,base,bibtex,hyphenat,hyphenat-doc,picture} \
 brave-browser code containerd.io docker-ce docker-ce-cli docker-compose-plugin google-chrome-stable preload terraform \
@@ -79,7 +79,7 @@ if [[ $XDG_CURRENT_DESKTOP = "XFCE" ]]; then
   # ALBERT LAUNCHER #
   sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
 
-  sudo dnf install -y cheese evince gedit nautilus plank sushi xfce4-notes-plugin albert
+  sudo dnf install -y cheese evince gedit git nautilus plank sushi xfce4-notes-plugin #albert
   sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha mousepad ristretto thunar transmission xfburn xterm xfce4-terminal 
 
 elif [[ $XDG_CURRENT_DESKTOP = "GNOME" ]]; then
@@ -111,7 +111,7 @@ sudo usermod -aG docker $USER
 flatpak install -y flathub org.libreoffice.LibreOffice md.obsidian.Obsidian com.spotify.Client org.telegram.desktop
 
 # PYTHON PIP #
-pip install --user grip pipenv azure-cli
+pip install --user grip pipenv #azure-cli
 
 # STARSHIP INSTALLATION #
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
@@ -179,7 +179,6 @@ rm -fr coreutils-$CORE_UTILS_VERSION
 sudo hostnamectl set-hostname "konoha"
 
 # Restore default config #
-rm $HOME/.fzf.zsh
 sudo sed -i "/Defaults timestamp_timeout/d" /etc/sudoers
 
 echo " >> Done, You Can Restart Your Computer! << "
