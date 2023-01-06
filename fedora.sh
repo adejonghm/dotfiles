@@ -77,10 +77,10 @@ if [[ $XDG_CURRENT_DESKTOP = "XFCE" ]]; then
   fi
 
   # ALBERT LAUNCHER #
-  sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
+  #sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_36/home:manuelschneid3r.repo
 
-  sudo dnf install -y cheese evince gedit git nautilus plank sushi xfce4-notes-plugin #albert
-  sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha mousepad ristretto thunar transmission xfburn xterm xfce4-terminal 
+  sudo dnf install -y cheese evince gedit git plank sushi ulauncher xfce4-notes-plugin #albert nautilus 
+  sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha mousepad ristretto transmission xfburn xterm xfce4-terminal #thunar 
 
 elif [[ $XDG_CURRENT_DESKTOP = "GNOME" ]]; then
   # RPM FUSION PACKAGES IN THE SOFTWARE CENTER #
