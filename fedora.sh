@@ -71,9 +71,11 @@ sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha 
 #============================
 #==  OTHER CONFIGURATIONS  ==
 #============================
-DNFDRAGORA=$HOME/.config/autostart/org.mageia.dnfdragora-updater.desktop 
-if [[ ! -f $DNFDRAGORA ]]; then
-  echo "Hidden=true" > $DNFDRAGORA    
+DNFDRAGORA_PATH=$HOME/.config/autostart/
+DNFDRAGORA_FILE=$DNFDRAGORA_PATH/org.mageia.dnfdragora-updater.desktop 
+if [[ ! -f $DNFDRAGORA_FILE ]]; then
+  mkdir $DNFDRAGORA_PATH
+  echo "Hidden=true" > $DNFDRAGORA_FILE
 fi
 
 # ENABLE DOCKER #
