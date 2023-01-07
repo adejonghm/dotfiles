@@ -124,7 +124,7 @@ declare -a marks=(
 declare -a dest=(
   "$HOME/Git/GH.dotfiles"
   "$HOME/Git/GH.python-mega-course"
-  "$HOME/Git/GH.readme-file"
+  "$HOME/Git/GH.my-readme"
 )
 
 for i in "${!marks[@]}"; do  
