@@ -38,7 +38,7 @@
     [[[window0]]]
       type = Window
       #last_active_window = True
-      size = 1200, 550
+      size = 1200, 650
       parent = ""
       position = 350:170
     [[[child1]]]
