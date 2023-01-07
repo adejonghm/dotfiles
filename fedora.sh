@@ -87,7 +87,7 @@ sudo usermod -aG docker $USER
 flatpak install -y flathub org.libreoffice.LibreOffice md.obsidian.Obsidian com.spotify.Client org.telegram.desktop
 
 # PYTHON PIP #
-pip install --user grip pipenv #azure-cli
+pip install --user docker grip pipenv pip-search pypi #azure-cli
 
 # STARSHIP INSTALLATION #
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
