@@ -119,12 +119,14 @@ declare -a marks=(
   "dotfiles"
   "mega-python"
   "my-readme"
+  "venv"
 )
 
 declare -a dest=(
   "$HOME/Git/GH.dotfiles"
   "$HOME/Git/GH.python-mega-course"
   "$HOME/Git/GH.my-readme"
+  "$HOME/workspaces/virtualEnvs/"
 )
 
 for i in "${!marks[@]}"; do  
