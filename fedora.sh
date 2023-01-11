@@ -60,7 +60,7 @@ gpgkey=https://packages.microsoft.com/keys/microsoft.asc' > /etc/yum.repos.d/vsc
 sudo dnf upgrade -y --refresh
 
 sudo dnf install -y bat dnf-plugins-core exa fd-find fzf git mc neofetch npm patchutils pdfgrep python3-pip ripgrep sqlite xkill zsh \
-cheese discord evince gedit htop megasync mpv nomacs neovim pinta plank qbittorrent rpi-imager redshift redshift-gtk terminator sushi ulauncher vlc xfce4-notes-plugin xournalpp zeal \
+cheese discord evince gedit gedit-plugin-textsize htop megasync mpv nomacs neovim pinta plank qbittorrent rpi-imager redshift redshift-gtk terminator sushi ulauncher vlc xfce4-notes-plugin xournalpp zeal \
 latexmk texlive texlive-{babel-english\*,babel-portuges\*,babel-spanish\*,base,bibtex,hyphenat,hyphenat-doc,picture} \
 brave-browser code containerd.io docker-ce docker-ce-cli docker-compose-plugin google-chrome-stable terraform \
 gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
@@ -119,6 +119,7 @@ declare -a marks=(
   "dotfiles"
   "mega-python"
   "my-readme"
+  "text-notes"
   "venv"
 )
 
@@ -126,6 +127,7 @@ declare -a dest=(
   "$HOME/Git/GH.dotfiles"
   "$HOME/Git/GH.python-mega-course"
   "$HOME/Git/GH.my-readme"
+  "/run/media/$USER/Storage/Mega/Text\ Note/"
   "$HOME/workspaces/virtualEnvs/"
 )
 
