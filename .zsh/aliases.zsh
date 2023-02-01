@@ -16,7 +16,6 @@ alias -g vim='nvim'
 #****************#
 alias conf-aliases='vim ~/.zsh/aliases.zsh'
 alias conf-starship='vim ~/.config/starship.toml'
-alias env-megapy='cd ~/workspaces/virtualEnvs/Ud-Python/ && pipenv shell'
 alias gz-pack='tar -czvf'	                # [..archivo a crear..] [..origen de la carpeta..]
 alias gz-view='tar -ztvf'	                # [..archivo a listar *.tar.gz]
 alias hdd-info='sudo hdparm -I'
@@ -28,6 +27,7 @@ alias linux-version='cat /etc/os-release'
 alias lspyenv='exa --icons ~/.local/share/virtualenvs/'
 alias process='ps aux | grep'
 alias temp-info='watch -n 2 sensors'
+alias ud-megapy='cd ~/workspaces/virtualEnvs/Ud-Python/ && pipenv shell'
 alias wan='ifconfig -a wlp4s0'
 alias zaliases='vim ~/.zsh/aliases.zsh'
 alias zconfig='vim ~/.zshrc'
