@@ -29,7 +29,7 @@ alias lspyenv='exa --icons ~/.local/share/virtualenvs/'
 alias process='ps aux | grep'
 alias temp-info='watch -n 2 sensors'
 alias wan='ifconfig -a wlp4s0'
-alias zaliases='vim ~/.zsh/.aliases.zsh'
+alias zaliases='vim ~/.zsh/aliases.zsh'
 alias zconfig='vim ~/.zshrc'
 alias zrestar='source ~/.zshrc'
 
