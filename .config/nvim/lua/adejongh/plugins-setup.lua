@@ -40,6 +40,7 @@ return packer.startup(function(use)
 	--use("folke/tokyonight.nvim") --"colorscheme tokyonight"
 	--use({ "uloco/bluloco.nvim", requires = { "rktjmp/lush.nvim" } }) -- "colorscheme bluloco-dark"
 	--use("kwsp/halcyon-neovim") -- "colorscheme halcyon"
+	--use("ayu-theme/ayu-vim") -- "colorscheme ayu"
 	use("navarasu/onedark.nvim") -- "colorscheme onedark"
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
