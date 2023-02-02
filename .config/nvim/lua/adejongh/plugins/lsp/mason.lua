@@ -26,6 +26,7 @@ mason_lspconfig.setup({
 		"cssls",
 		"dockerls",
 		"html",
+		"pylsp",
 		"pyright",
 		"prosemd_lsp", -- Markdown
 		"sumneko_lua", -- Lua
