@@ -12,8 +12,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/adejonghm/dotfiles/main/fe
 
 ***Recomendation:*** Feel free to use some parts of the configuration files, or if you want, you can fork the repository and make your customizations.
 
-| [Neovim](#neovim-configuration) | [Starship](#starship-configuration) | [Zshell](#zshell-configuration) |
-|---------------------------------|-------------------------------------|---------------------------------|
+| [Neovim](#neovim-configuration) | [Zshell](#zshell-configuration) | [Starship](#starship-configuration) |
+|---------------------------------|---------------------------------|-------------------------------------|
 
 ## Neovim configuration
 
@@ -48,18 +48,37 @@ You can find other color schemes in the table below.
 | Sonokai     | ["sainnhe/sonokai"](https://github.com/sainnhe/sonokai)                             | colorscheme sonokai |
 | Tokyonight  | ["folke/tokyonight.nvim"](https://github.com/folke/tokyonight.nvim)                 | colorscheme tokyonight |
 
+Final Result
+
+![neovim](screenshoots/neovim.png)
+
 ## Zshell configuration
 
 My setup is made up of [Zshell](https://www.zsh.org/) + [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) + [Powerlevel 10k](https://github.com/romkatv/powerlevel10k). If you want to use this configuration, you should follow these steps:
 
 1. After installing Zsh, install the Oh-My-Zsh following the [instructions](https://github.com/ohmyzsh/ohmyzsh#basic-installation).
 2. Install Powerlevel10k following the [instructions](https://github.com/romkatv/powerlevel10k#oh-my-zsh).
-3. Copy the file [zshrc](zshrc) as `.zshrc` and the folder [`.zsh/`](.zsh/) to your home folder.
-4. Delete
+3. Copy the file [zshrc](zshrc) as `.zshrc` and the folder [`.zsh/`](.zsh/) to your HOME folder.
+4. Delete the `.p10k.zsh` file created on the HOME directory.
+5. Delete the `.fzf.*` files created on the HOME directory.
+6. Copy the [`.font/`](.fonts/) to your HOME folder.
+
+Final Result
+
+![zsh](screenshoots/zsh.png)
 
 ## Starship configuration
 
-My configuration is
+Starship is an alternative prompt to Powerlevel10k. The advantage of using Starship is that you can get the same prompt regardless of the shell and/or operating system you're using. If you want to use this configuration, you should follow these steps:
+
+1. After install [Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation), copy the [`starship.toml`](.config/starship.toml) to `$HOME/.config/`.
+2. Copy the folder [`.zsh/`](.zsh/) to your HOME folder.
+3. Comment or delete lines 14 and 17 in the `.zshrc` file.
+4. Uncomment lines 108 and 109 in the `.zshrc` file.
+
+Final Result
+
+![starship](screenshoots/starship.png)
 
 **My contact info**: | [LinkedIn](https://www.linkedin.com/in/adejonghm/) | [Telegram](https://t.me/adejonghm) | [eMail](mailto:dejongh.morell@gmail.com) |
 

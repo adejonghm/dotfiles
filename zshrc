@@ -107,4 +107,3 @@ source <(kubectl completion zsh)
 # Customizing prompt with Starship
 #[[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
 #eval "$(starship init zsh)"
-
