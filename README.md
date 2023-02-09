@@ -38,8 +38,8 @@ local status, _ = pcall(vim.cmd, "colorscheme onedark")
 
 You can find other color schemes in the table below.
 
-| Name | GitHub | colorscheme |
-|------|--------|-------------|
+| Name | GitHub | Color Scheme |
+|------|--------|--------------|
 | Ayu         | ["ayu-theme/ayu-vim"](https://github.com/ayu-theme/ayu-vim)                         | colorscheme ayu |
 | Bluloco *   | ["uloco/bluloco.nvim"](https://github.com/uloco/bluloco.nvim)                       | colorscheme bluloco-dark |
 | Halcyon     | ["kwsp/halcyon-neovim"](https://github.com/kwsp/halcyon-neovim)                     | colorscheme halcyon |
