@@ -1,6 +1,6 @@
 # Configuration Files for Fedora Linux 37 (Xfce)
 
-In this repository are my configuration files for Fedora Linux 37 (Xfce) used on my personal computer. In it you will find what is necessary to configure [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/), [Zshell](https://www.zsh.org/) with [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) and [Powerlevel 10k](https://github.com/romkatv/powerlevel10k), with [Starship](https://starship.rs/) as an alternative. There is also everything you need to set up [Noevim](https://neovim.io/) as your IDE for programming in Python and a few other languages.
+In this repository are my configuration files for Fedora Linux 37 (Xfce) used on my personal computer. In it, you will find what is necessary to configure [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/), [Zshell](https://www.zsh.org/) with [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) and [Powerlevel 10k](https://github.com/romkatv/powerlevel10k), with [Starship](https://starship.rs/) as an alternative. There is also everything you need to set up [Noevim](https://neovim.io/) as your IDE for programming in Python and a few other languages.
 
 Using the following command line, you can enjoy my customizations without spending hours configuring anything. Running it will download the [fedora.sh](fedora.sh) script and run it automatically once the download is complete.
 
@@ -21,10 +21,10 @@ My setup is based on the [Lua language](https://www.lua.org/), and Neovim (versi
 
 ### Dependencies
 
-- [NPM](https://github.com/npm/documentation) - For Mason / LSP.
-- [Ripgrep](https://github.com/BurntSushi/ripgrep) - For Telescope Fuzzy Finder.
-- [Fuzzy Finder](https://github.com/junegunn/fzf) - For Telescope.
-- [Nerd Font](https://www.nerdfonts.com/) - I use Fira Code NF Regular.
+- [NPM](https://github.com/npm/documentation) -- For Mason / LSP.
+- [Ripgrep](https://github.com/BurntSushi/ripgrep) -- For Telescope Fuzzy Finder.
+- [Fuzzy Finder](https://github.com/junegunn/fzf) -- For Telescope.
+- [Nerd Font](https://www.nerdfonts.com/) -- I use Fira Code NF Regular.
 
 I'm using the `OneDark` color scheme, as shown below.
 
@@ -38,7 +38,7 @@ local status, _ = pcall(vim.cmd, "colorscheme onedark")
 
 You can find other color schemes in the table below.
 
-| Name | Github | colorscheme |
+| Name | GitHub | colorscheme |
 |------|--------|-------------|
 | Ayu         | ["ayu-theme/ayu-vim"](https://github.com/ayu-theme/ayu-vim)                         | colorscheme ayu |
 | Bluloco *   | ["uloco/bluloco.nvim"](https://github.com/uloco/bluloco.nvim)                       | colorscheme bluloco-dark |
@@ -58,10 +58,11 @@ My setup is made up of [Zshell](https://www.zsh.org/) + [Oh My Zsh](https://gith
 
 1. After installing Zsh, install the Oh-My-Zsh following the [instructions](https://github.com/ohmyzsh/ohmyzsh#basic-installation).
 2. Install Powerlevel10k following the [instructions](https://github.com/romkatv/powerlevel10k#oh-my-zsh).
-3. Copy the file [zshrc](zshrc) as `.zshrc` and the folder [`.zsh/`](.zsh/) to your HOME folder.
+3. Copy the file [zshrc](zshrc) as `.zshrc` and, the folder [`.zsh/`](.zsh/) to your HOME folder.
 4. Delete the `.p10k.zsh` file created on the HOME directory.
-5. Delete the `.fzf.*` files created on the HOME directory.
-6. Copy the [`.font/`](.fonts/) to your HOME folder.
+5. Install Fuzzy Finder (fzf).
+6. Delete the `.fzf.*` files created on the HOME directory.
+7. Copy the [`.font/`](.fonts/) to your HOME folder.
 
 Final Result
 
