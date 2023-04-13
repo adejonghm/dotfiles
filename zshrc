@@ -25,6 +25,9 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH=$HOME/.local/bin:$PATH
 export LANG=en_US.UTF-8
 export UPDATE_ZSH_DAYS=30
+export GMAIL_USERNAME=""
+export GMAIL_PASSWORD=""
+
 
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nvim'
