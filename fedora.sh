@@ -66,13 +66,18 @@ gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg' > /etc/yum
 # - grip -> Local renderer for Markdown files
 sudo dnf upgrade -y --refresh
 
+<<<<<<< HEAD
 sudo dnf install -y bat dnf-plugins-core exa fd-find fzf gcc-c++ git mc neofetch npm patchutils pdfgrep python3-pip python3-tkinter ripgrep sqlite xkill zsh \
 cheese discord evince gedit gedit-plugin-textsize htop megasync mpv nomacs neovim pinta plank qbittorrent rpi-imager redshift redshift-gtk simplescreenrecorder sushi terminator ulauncher vlc xfce4-notes-plugin xournalpp zeal \
+=======
+sudo dnf install -y bat dnf-plugins-core exa fd-find fzf gcc-c++ git mc neofetch npm openssl-devel patchutils pdfgrep python3-pip python3-tkinter redhat-rpm-config ripgrep ruby ruby-devel sqlite xkill zsh @development-tools \
+cheese discord evince gedit gedit-plugin-textsize htop megasync mpv nomacs neovim pinta plank qbittorrent rpi-imager redshift redshift-gtk terminator sushi ulauncher vlc xfce4-notes-plugin xournalpp zeal \
+>>>>>>> a437e2d (feat: Added Jekyll libs & RubyGem)
 latexmk texlive texlive-{babel-english\*,babel-portuges\*,babel-spanish\*,base,bibtex,hyphenat,hyphenat-doc,picture} \
 brave-browser code containerd.io docker-ce docker-ce-cli docker-compose-plugin google-chrome-stable kubectl terraform \
 gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 
-sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha mousepad ristretto transmission xfburn xterm xfce4-terminal #thunar 
+sudo dnf remove -y asunder atril claws-mail geany gnumeric parole pidgin pragha mousepad ristretto transmission xfburn xterm xfce4-terminal
 
 
 #============================
