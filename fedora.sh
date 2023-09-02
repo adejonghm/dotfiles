@@ -67,7 +67,7 @@ gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg' > /etc/yum
 sudo dnf upgrade -y --refresh
 
 sudo dnf install -y bat dnf-plugins-core exa fd-find fzf gcc-c++ git mc neofetch npm openssl-devel patchutils pdfgrep python3-pip python3-tkinter redhat-rpm-config ripgrep ruby ruby-devel sqlite xkill zsh @development-tools \
-cheese discord evince gedit gedit-plugin-textsize htop megasync mpv nomacs neovim pinta plank qbittorrent rpi-imager redshift redshift-gtk terminator sushi ulauncher vlc xfce4-notes-plugin xournalpp zeal \
+cheese evince gedit gedit-plugin-textsize htop megasync mpv nomacs neovim pinta plank qbittorrent rpi-imager redshift redshift-gtk terminator sushi ulauncher vlc xfce4-notes-plugin xournalpp zeal \
 latexmk texlive texlive-{babel-english\*,babel-portuges\*,babel-spanish\*,base,bibtex,hyphenat,hyphenat-doc,picture} \
 brave-browser code containerd.io docker-ce docker-ce-cli docker-compose-plugin google-chrome-stable kubectl terraform \
 gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
@@ -91,7 +91,7 @@ sudo systemctl start docker.service
 sudo usermod -aG docker $USER
 
 # FLATHUB #
-flatpak install -y flathub org.libreoffice.LibreOffice md.obsidian.Obsidian com.spotify.Client org.telegram.desktop
+flatpak install -y flathub com.discordapp.Discord com.getpostman.Postman com.spotify.Client org.libreoffice.LibreOffice org.telegram.desktop
 
 # PYTHON PIP #
 pip install --user docker grip pipenv pip-search pypi #azure-cli
