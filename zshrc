@@ -20,14 +20,15 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ====================
 # ===   Exports    ===
 # ====================
-export MANPATH="/usr/local/man:$MANPATH"
-export ZSH="$HOME/.oh-my-zsh"
-export PATH=$HOME/.local/bin:$PATH
-export LANG=en_US.UTF-8
-export UPDATE_ZSH_DAYS=30
+export AWS_ACCESS_KEY_ID=""
+export AWS_SECRET_ACCESS_KEY=""
 export GMAIL_USERNAME=""
 export GMAIL_PASSWORD=""
-
+export LANG=en_US.UTF-8
+export MANPATH="/usr/local/man:$MANPATH"
+export PATH=$HOME/.local/bin:$PATH
+export UPDATE_ZSH_DAYS=30
+export ZSH="$HOME/.oh-my-zsh"
 
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nvim'
