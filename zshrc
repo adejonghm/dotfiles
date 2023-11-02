@@ -20,12 +20,20 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ====================
 # ===   Exports    ===
 # ====================
-export AWS_ACCESS_KEY_ID=""
-export AWS_SECRET_ACCESS_KEY=""
+export TF_VAR_ARM_CLIENT_ID=
+export TF_VAR_ARM_CLIENT_SECRET=
+export TF_VAR_ARM_SUBSCRIPTION_ID=
+export TF_VAR_ARM_TENANT_ID=
+
+export TF_VAR_AWS_ACCESS_KEY_ID=
+export TF_VAR_AWS_SECRET_ACCESS_KEY=
+
 export GMAIL_USERNAME=""
 export GMAIL_PASSWORD=""
+
 export LANG=en_US.UTF-8
 export MANPATH="/usr/local/man:$MANPATH"
+export MEDIA=/run/media/$USER/Storage
 export PATH=$HOME/.local/bin:$PATH
 export UPDATE_ZSH_DAYS=30
 export ZSH="$HOME/.oh-my-zsh"
