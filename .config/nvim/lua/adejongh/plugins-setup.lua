@@ -33,7 +33,15 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-	use("navarasu/onedark.nvim") -- colorscheme
+	-- Colorscheme
+	--use("bluz71/vim-nightfly-guicolors") --"colorscheme nightfly"
+	--use("EdenEast/nightfox.nvim")  --"colorscheme nightfox"
+	--use("sainnhe/sonokai")    --"colorscheme sonokai"
+	--use("folke/tokyonight.nvim") --"colorscheme tokyonight"
+	--use({ "uloco/bluloco.nvim", requires = { "rktjmp/lush.nvim" } }) -- "colorscheme bluloco-dark"
+	--use("kwsp/halcyon-neovim") -- "colorscheme halcyon"
+	--use("ayu-theme/ayu-vim") -- "colorscheme ayu"
+	use("navarasu/onedark.nvim") -- "colorscheme onedark"
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
