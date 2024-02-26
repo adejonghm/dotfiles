@@ -75,7 +75,7 @@ zstyle ':autocomplete:tab:*' completion cycle
 # ===   Plugins    ===
 # ====================
 plugins=(
-    bgnotify colored-man-pages colorize dircycle dnf docker extract fzf git gitignore jump kubectl python ripgrep sudo systemd terraform zsh-autosuggestions zsh-syntax-highlighting
+    bgnotify colored-man-pages colorize dircycle dnf docker extract fzf git gitignore jump kubectl kube-ps1 python ripgrep sudo systemd terraform web-search zsh-autosuggestions zsh-syntax-highlighting
 )
 
 
@@ -116,6 +116,17 @@ source "$HOME/.fzf/shell/key-bindings.zsh"
 # Enable kubectl auto-completion
 source <(kubectl completion zsh)
 
-# Customizing prompt with Starship
+
+# ===========================
+# ===   Starship Prompt   ===
+# ===========================
 #[[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
 #eval "$(starship init zsh)"
+
+
+# ========================
+# ===   Ruby Version   ===
+# ========================
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.3.0
