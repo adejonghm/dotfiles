@@ -1,0 +1,27 @@
+#******************#
+#  SYSTEM ALIASES  #
+#******************#
+alias c='clear'
+alias gz-pack='tar -czvf'	                # [..archivo a crear..] [..origen de la carpeta..]
+alias gz-view='tar -ztvf'	                # [..archivo a listar *.tar.gz]
+alias hist='history | grep'
+alias j='jump'
+alias lz='eza --icons --group-directories-first'
+alias lza='lz -a'
+alias lzd='lz -D'
+alias lzl='lz -gl --git'
+alias lzpyenv='lz ~/.local/share/virtualenvs/'
+alias process='ps aux | grep'
+alias py-blog='cd /Users/adejongh/Workspaces/virtualEnvs/ByteMaze && pipenv shell'
+alias py-udemy='cd /Users/adejongh/Workspaces/virtualEnvs/Ud-Python && pipenv shell'
+alias vim='nvim'
+alias wireless='ifconfig en1'
+alias zaliases='vim ~/.zsh/aliases.zsh'
+alias zconfig='vim ~/.zshrc'
+alias zrestar='source ~/.zshrc'
+
+
+#### Depricated ####
+#alias cp='advcp -gR'
+#alias mv='advmv -g'
+#alias kernel-version='uname -romi'
