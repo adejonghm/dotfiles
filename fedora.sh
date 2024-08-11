@@ -111,12 +111,12 @@ git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf && $HOME/.fzf
 # MY CONFIGURATION FILES #
 git clone https://github.com/adejonghm/dotfiles.git
 
-cp dotfiles/.config/starship.toml $HOME/.config/
+cp dotfiles/config/starship.toml $HOME/.config/
 cp dotfiles/zshrc $HOME/.zshrc
-cp -r dotfiles/.config/nvim/ $HOME/.config/nvim/
-cp -r dotfiles/.config/terminator/ $HOME/.config/terminator/
-cp -r dotfiles/.fonts/ $HOME/
-cp -r dotfiles/.zsh/ $HOME/
+cp -r dotfiles/config/nvim/ $HOME/.config/nvim/
+cp -r dotfiles/config/terminator/ $HOME/.config/terminator/
+cp -r dotfiles/fonts/ $HOME/.fonts
+cp -r dotfiles/zsh/ $HOME/.zsh
 
 rm -fr dotfiles/
 
