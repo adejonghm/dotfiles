@@ -14,7 +14,8 @@ fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Customizing prompt. run `p10k configure` or edit ~/.zsh/p10k.zsh
-[[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
+#[[ ! -f ~/.zsh/p10k_oneline.zsh ]] || source ~/.zsh/p10k_oneline.zsh
+[[ ! -f ~/.zsh/p10k_twolines.zsh ]] || source ~/.zsh/p10k_twolines.zsh
 
 
 # ====================
@@ -33,9 +34,8 @@ export GMAIL_PASSWORD=""
 
 export LANG=en_US.UTF-8
 export MANPATH="/usr/local/man:$MANPATH"
-export MEDIA=/run/media/$USER/Storage
 export PATH=$HOME/.local/bin:$PATH
-export UPDATE_ZSH_DAYS=30
+export UPDATE_ZSH_DAYS=15
 export ZSH="$HOME/.oh-my-zsh"
 
 if [[ -n $SSH_CONNECTION ]]; then
@@ -75,7 +75,7 @@ zstyle ':autocomplete:tab:*' completion cycle
 # ===   Plugins    ===
 # ====================
 plugins=(
-    bgnotify colored-man-pages colorize dircycle dnf docker extract fzf git gitignore jump kubectl kube-ps1 python ripgrep sudo systemd terraform web-search zsh-autosuggestions zsh-syntax-highlighting
+    bgnotify colored-man-pages colorize dircycle dnf docker extract fzf git gitignore jump kubectl kube-ps1 python sudo systemd terraform web-search zsh-autosuggestions zsh-syntax-highlighting
 )
 
 
@@ -84,12 +84,6 @@ plugins=(
 # ===   Needs to be after 'plugins'  ===
 # ======================================
 source $ZSH/oh-my-zsh.sh
-
-
-# ====================
-# ===   OCI-CLI    ===
-# ====================
-[[ -e "~/.local/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "~/.local/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh"
 
 
 # =============================
@@ -117,6 +111,14 @@ source "$HOME/.fzf/shell/key-bindings.zsh"
 source <(kubectl completion zsh)
 
 
+# ========================
+# ===   Ruby Version   ===
+# ========================
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.3.0
+
+
 # ===========================
 # ===   Starship Prompt   ===
 # ===========================
@@ -124,9 +126,8 @@ source <(kubectl completion zsh)
 #eval "$(starship init zsh)"
 
 
-# ========================
-# ===   Ruby Version   ===
-# ========================
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.3.0
+# ====================
+# ===   OCI-CLI    ===
+# ====================
+# [[ -e "~/.local/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "~/.local/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh"
+
